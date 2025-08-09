@@ -1,0 +1,330 @@
+/* Styling Global & Navigasi */
+*,
+html {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: sans-serif;
+    background-color: #000000; /* Latar belakang hitam */
+    color: #e0e0e0; /* Warna teks terang */
+    line-height: 1.6;
+    display: flex; /* Menggunakan Flexbox */
+    flex-direction: column; /* Konten tersusun secara vertikal */
+    min-height: 100vh; /* Memastikan body setidaknya setinggi viewport */
+}
+.container {
+    flex-grow: 1; /* Kontainer akan mengisi sisa ruang vertikal */
+    display: flex; /* Menggunakan Flexbox */
+    flex-direction: column; /* Konten di dalamnya tersusun vertikal */
+    justify-content: center; /* Memusatkan konten secara vertikal */
+    align-items: center; /* Memusatkan konten secara horizontal */
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+.navbar-container {
+    background-color: #1a1a1a; /* Abu-abu gelap untuk navigasi */
+    padding: 15px 0;
+    text-align: center;
+}
+.ul-navbar {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+}
+.li-navbar {
+    margin: 0 20px;
+    font-size: 1.2em;
+}
+.a-navbar {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.a-navbar:hover {
+    color: #39FF14; /* Hijau neon terang saat di-hover */
+}
+
+/* --- Styling Halaman Home --- */
+.home-content {
+    text-align: center;
+    /* Hapus padding besar karena sudah diatur oleh .container */
+}
+.squad-logo {
+    width: 200px;
+    margin-bottom: 30px;
+    border-radius: 15px; /* Nilai radius untuk membulatkan sudut */
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.7); /* Efek glow neon hijau */
+    transition: transform 0.3s ease-in-out; /* Efek transisi */
+}
+
+.squad-logo:hover {
+    transform: scale(1.1); /* Logo akan sedikit membesar saat di-hover */
+}
+.cta-button {
+    display: inline-block;
+    background-color: #39FF14; /* Tombol hijau neon terang */
+    color: black; /* Teks hitam di atas hijau */
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.cta-button:hover {
+    background-color: #27FF00; /* Sedikit lebih gelap saat di-hover */
+    color: black;
+}
+
+/* Footer */
+.container-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000000; /* Latar belakang hitam untuk footer */
+    /* Hapus margin-top karena flexbox akan mengaturnya */
+    color: #777;
+}
+/* === Media Query untuk Perangkat Mobile (Max-width: 768px) === */
+@media (max-width: 768px) {
+    /* Menyesuaikan Navbar */
+    .ul-navbar {
+        flex-direction: column; /* Mengubah tata letak navbar menjadi vertikal */
+        gap: 10px; /* Memberikan jarak antar tautan */
+    }
+
+    .li-navbar {
+        font-size: 1em; /* Mengecilkan ukuran font navbar */
+        margin: 5px 0;
+    }
+
+    /* Menyesuaikan Konten Utama */
+    .container {
+        padding: 10px; /* Mengurangi padding agar konten tidak terlalu menjorok */
+    }
+
+    /* Menyesuaikan Halaman Home */
+    .squad-logo {
+        width: 150px; /* Mengecilkan ukuran logo */
+    }
+    .home-hero-section h1 {
+        font-size: 1.5em; /* Mengecilkan ukuran judul */
+    }
+    .home-hero-section p {
+        font-size: 0.9em;
+    }
+    .cta-button {
+        padding: 10px 20px; /* Mengecilkan tombol */
+        font-size: 0.9em;
+    }
+
+    /* Menyesuaikan Halaman Anggota */
+    .anggota-list {
+        flex-direction: column; /* Menumpuk kartu anggota secara vertikal */
+        align-items: center; /* Memusatkan kartu anggota */
+    }
+    .anggota-card {
+        width: 90%; /* Menggunakan lebar penuh untuk kartu anggota */
+    }
+
+    /* Menyesuaikan Halaman Tentang */
+    .tentang-section {
+        padding: 20px;
+    }
+    .tentang-section h1 {
+        font-size: 1.5em;
+    }
+    .tentang-section li {
+        font-size: 0.9em;
+    }
+    
+    /* Menyesuaikan Footer */
+    .footer-h1 {
+        font-size: 1em; /* Mengecilkan ukuran font footer */
+    }
+}
+/* Styling Halaman Anggota */
+.anggota-content {
+    text-align: center;
+    padding: 50px 20px;
+}
+.anggota-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+.anggota-card {
+    background-color: #1a1a1a; /* Abu-abu gelap untuk kartu anggota */
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 5px 15px rgba(0, 255, 50, 0.3); /* Efek cahaya hijau */
+    border: 1px solid #39FF14; /* Border hijau neon */
+    margin-bottom: 20px; /* Jarak antar kartu saat wrap */
+}
+.anggota-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #39FF14; /* Border foto hijau neon */
+    margin-bottom: 15px;
+}
+.anggota-card h3 {
+    color: #f0f0f0;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+.anggota-card p {
+    color: #d0d0d0;
+    margin-bottom: 10px;
+}
+.anggota-card h4 {
+    color: #f0f0f0;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+.hero-fav-list {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.hero-fav-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #39FF14;
+    object-fit: cover;
+}
+
+/* === Media Query untuk Perangkat Mobile (Max-width: 768px) === */
+@media (max-width: 768px) {
+    /* Mengubah tata letak Navbar menjadi horizontal */
+    .ul-navbar {
+        flex-direction: row; /* Menyusun tautan secara horizontal */
+        justify-content: space-evenly; /* Menyebar tautan secara merata */
+        gap: 0; /* Menghilangkan jarak antar tautan */
+        padding: 10px 0;
+        background-color: #1a1a1a;
+    }
+
+    /* Mengubah ukuran font di Navbar */
+    .li-navbar {
+        margin: 0; /* Hapus margin agar tidak ada celah berlebih */
+        font-size: 0.8em; /* Mengecilkan font agar muat */
+        text-align: center;
+    }
+
+    /* Menyesuaikan Konten Utama */
+    .container {
+        padding: 10px; /* Mengurangi padding agar konten tidak terlalu menjorok */
+    }
+
+    /* Menyesuaikan Halaman Home */
+    .squad-logo {
+        width: 150px; /* Mengecilkan ukuran logo */
+    }
+    .home-hero-section h1 {
+        font-size: 1.5em; /* Mengecilkan ukuran judul */
+    }
+    .home-hero-section p {
+        font-size: 0.9em;
+    }
+    .cta-button {
+        padding: 10px 20px; /* Mengecilkan tombol */
+        font-size: 0.9em;
+    }
+
+    /* Menyesuaikan Halaman Anggota */
+    .anggota-list {
+        flex-direction: column; /* Menumpuk kartu anggota secara vertikal */
+        align-items: center; /* Memusatkan kartu anggota */
+    }
+    .anggota-card {
+        width: 90%; /* Menggunakan lebar penuh untuk kartu anggota */
+    }
+
+    /* Menyesuaikan Halaman Tentang */
+    .tentang-section {
+        padding: 20px;
+    }
+    .tentang-section h1 {
+        font-size: 1.5em;
+    }
+    .tentang-section li {
+        font-size: 0.9em;
+    }
+
+    /* Menyesuaikan Footer */
+    .footer-h1 {
+        font-size: 1em; /* Mengecilkan ukuran font footer */
+    }
+}
+/* Styling untuk logo di halaman Tentang */
+.sejarah-logo {
+    width: 150px;
+    height: auto;
+    margin: 20px auto; /* Memberi jarak dan memusatkan logo */
+    display: block; /* Agar margin auto bekerja */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.7); /* Efek glow */
+}
+/* Styling Halaman Tentang */
+.tentang-content {
+    padding: 50px 20px;
+    text-align: center;
+}
+.tentang-section {
+    background-color: #1a1a1a;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 255, 50, 0.3);
+    border: 1px solid #39FF14;
+    margin-bottom: 30px;
+}
+.tentang-section h1 {
+    color: #39FF14;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+.tentang-section p {
+    color: #e0e0e0;
+    line-height: 1.8;
+}
+.trophy-item {
+    margin-bottom: 30px;
+}
+.trophy-item h2 {
+    color: #f0f0f0;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+.trophy-img {
+    width: 150px;
+    height: auto;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+}
+
+/* Responsif untuk halaman tentang di mobile */
+@media (max-width: 768px) {
+    .tentang-section {
+        padding: 20px;
+    }
+    .tentang-section h1 {
+        font-size: 1.5em;
+    }
+    .tentang-section p, .trophy-item p {
+        font-size: 0.9em;
+    }
+    .trophy-img {
+        width: 100px;
+    }
+}
